@@ -24,6 +24,9 @@ let
       substitute $base/$file $out/$file \
         --replace /etc/nginx/ $out/nginx/ \
         ${replacementFlags} 
+      
+      cat $out/$file | grep -v 'access_log' | grep -v 'error_log' > tmp
+      mv tmp $out/$file
 
     done
   '';
