@@ -23,7 +23,7 @@ let
       mkdir -p $out/$(dirname $file)
       substitute $base/$file $out/$file \
         --replace /etc/nginx/ $out/nginx/ \
-        ${replacementFlags} 2>/dev/null
+        ${replacementFlags} 
 
     done
   '';
